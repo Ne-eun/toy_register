@@ -1,0 +1,112 @@
+
+
+.now_bidding {
+	box-sizing: border-box;
+	margin-top: 40px;
+	.main_title {
+		font-size: 24px;
+		font-weight: 600;
+		color: $black;
+	}
+	.sub_title {
+		font-size: 14px;
+		font-weight: 600;
+		color: $sub;
+		cursor: pointer;
+		> .arrow {
+			margin-left: 4px;
+			margin-bottom: 1px;
+		}
+	}
+	.now_bidding_list {
+		max-width: $max_width;
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px 20px;
+		margin: 0 auto;
+		margin-top: 24px;
+		&:before {
+			content: "";
+			position: absolute;
+			left: -40px;
+			top: 50%;
+			width: 16px;
+			height: 16px;
+			border: 3px solid $black;
+			border-right: none;
+			border-bottom: none;
+			transform: rotate(-45deg);
+			cursor: pointer;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			right: -40px;
+			top: 50%;
+			width: 16px;
+			height: 16px;
+			border: 3px solid $black;
+			border-right: none;
+			border-bottom: none;
+			transform: rotate(135deg);
+			cursor: pointer;
+		}
+	}
+}
+
+.item_card {
+	width: 100%;
+	background-color: $back_gray;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+	background-color: white;
+	overflow: hidden;
+	cursor: pointer;
+	.item_info {
+		padding: 16px;
+		>.main_title {
+			font-size: 18px;
+			color: #454c53;
+		}
+		>.sub_title {
+			font-weight: 500;
+		}
+	}
+	.item_price {
+		text-align: right;
+		margin-bottom: 16px;
+		.main_title {
+			font-size: 16px;
+			font-weight: 500;
+		}
+		.sub_title {
+			font-size: 22px;
+			font-weight: 600;
+			color: $primary;
+		}
+	}
+}
+
+.line_badge {
+	display: flex;
+	justify-content: space-between;
+	padding: 4px 16px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $danger;
+	> p {
+		color: white;
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.now_bidding {
+		width: 100%;
+		overflow: hidden;
+	}
+}

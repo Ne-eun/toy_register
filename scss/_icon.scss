@@ -1,0 +1,23 @@
+
+//icons
+*[class*="icon_32_"] {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+.icon_32_search {
+	background: url(images/search_32.svg);
+}
+.icon_32_notibell {
+	background: url(images/bell_32.svg);
+}
+
+
+*[class*="icon_12_"] {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+}
+.icon_12_map {
+	background: url(images/map_12.svg);
+}

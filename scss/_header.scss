@@ -1,0 +1,28 @@
+header {
+	max-width: $max_width;
+	display: flex;
+	margin: 0 auto;
+	padding: 16px;
+	align-items: center;
+}
+
+.top_nav {
+	display: flex;
+	margin-left: 60px;
+	box-sizing: border-box;
+	> li {
+		font-size: 18px;
+		color: $black;
+		font-weight: bold;
+		margin-left: 30px;
+	}
+}
+
+.nav_icons {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	> span{ 
+		margin-right: 32px;
+	}
+}
