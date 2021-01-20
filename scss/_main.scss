@@ -3,26 +3,33 @@
 .now_bidding {
 	box-sizing: border-box;
 	margin-top: 40px;
-	.main_title {
-		font-size: 24px;
-		font-weight: 600;
-		color: $black;
-	}
-	.sub_title {
-		font-size: 14px;
-		font-weight: 600;
-		color: $sub;
-		cursor: pointer;
-		> .arrow {
-			margin-left: 4px;
-			margin-bottom: 1px;
+	overflow: hidden;
+
+	.bidding_title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.main_title {
+			font-size: 24px;
+			font-weight: 600;
+			color: $black;
+		}
+		.sub_title {
+			font-size: 14px;
+			font-weight: 600;
+			color: $sub;
+			cursor: pointer;
+			> .arrow {
+				margin-left: 4px;
+				margin-bottom: 1px;
+			}
 		}
 	}
 	.now_bidding_list {
 		max-width: $max_width;
 		position: relative;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 20px 20px;
 		margin: 0 auto;
 		margin-top: 24px;
@@ -105,8 +112,33 @@
 }
 
 @media screen and (max-width: 1023px) {
+	section {
+		min-width: $min_width;
+	}
 	.now_bidding {
 		width: 100%;
-		overflow: hidden;
+		margin-top: 20px;
+		.now_bidding_list {
+			display: inline-grid;
+			grid-template-columns: repeat(3, 1fr);
+			width: 130%;
+		}
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.now_bidding {
+		.now_bidding_list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.now_bidding {
+		.now_bidding_list {
+			grid-template-columns: 1fr;
+			width: 100%;
+		}
 	}
 }

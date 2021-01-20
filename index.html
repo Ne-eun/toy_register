@@ -5,25 +5,68 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="test.css">
+	<script src="/node_modules/multi-clamp/MultiClamp.min.js"></script>
 </head>
 <body>
 	<header>
-		<img src="images/main_logo.svg" alt="logo" />
+		<a href="index.html">
+			<img src="images/main_logo.svg" alt="logo" />
+		</a>
 		<ul class="top_nav">
-			<li>물건 목록</li>
-			<li>경매야 스쿨</li>
-			<li>고객지원</li>
-			<li>마이페이지</li>
+			<li><a href="">물건 목록</a></li>
+			<li><a href="">경매야 스쿨</a></li>
+			<li><a href="">고객지원</a></li>
+			<li><a href="">마이페이지</a></li>
 		</ul>
 		<div class="nav_icons">
 			<span class="icon_32_search"></span>
 			<span class="icon_32_notibell"></span>
-			<div class="button flex_right">로그인</div>
+			<button class="flex_right">로그인</button>
+			<div class="icon_24_hamberger" onclick="toggleSideNav()"></div>
 		</div>
 	</header>
 
+	<!-- //반응형 메뉴 사이드바 -->
+	<section class="side_nav" style="left: 100%">
+		<div class="background">
+			<div class="icon_24_cancel" onclick="toggleSideNav()"></div>
+			<div class="auth_buttons">
+				<button class="outline">회원가입</button>
+				<button>로그인</button>
+			</div>
+			<p class="auth_description">로그인 후 더 다양한 서비스를 이용하세요.</p>
+
+			<div class="menus">
+				<a href="">경매야 물건 목록</a>
+				<a href="">경매야 스쿨</a>
+				<a href="">마이페이지</a>
+			</div>
+
+			<div class="event">
+				<div class="title">이벤트</div>
+				<!-- <p>진행중인 이벤트가 없습니다.</p> -->
+				<div class="event_item">
+					<div class="thumbnail16_9">
+						<img src="" alt="">
+					</div>
+					<div class="item_info">
+						<p class="title ellipsis2">이벤트명을 시작중입니다 원해시는 분은 해당 글을 클릭하세요오오옹 이벤트 이벤트으으으으</p>
+						<p class="sub_title">20.00.00 ~ 20.00.00</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="menus">
+				<a href="">공지사항</a>
+				<a href="">자주 묻는 질문</a>
+				<a href="">보도자료</a>
+			</div> 
+		</div>
+	</section>
+
+
 	<section class="now_bidding">
-		<article class="flex_between">
+		<article class="bidding_title">
 			<div class="main_title">지금 입찰중!</div>
 				<div class="sub_title">전체보기 <span class="arrow"></span></div>
 			</div>
@@ -77,7 +120,7 @@
 			<div class="item_card">
 				<div class="thumbnail16_9">
 					<img src="images/ex_back.jpg" alt="예시 이미지" />
-					<span class="badge left">입찰중</span>
+					<span class="badge left waitng">입찰대기중</span>
 					<span class="badge right trans_black">조회수 4,230회</span>
 					<div class="line_badge">
 						<p>입찰 마감까지</p>
@@ -94,29 +137,8 @@
 					<div class="item_tag">#토지/대지</div>
 					<div class="item_tag">#주거용건물/단독주택</div>
 				</div>
-			</div>
+				
 
-			<div class="item_card">
-				<div class="thumbnail16_9">
-					<img src="images/ex_back.jpg" alt="예시 이미지" />
-					<span class="badge left">입찰중</span>
-					<span class="badge right trans_black">조회수 4,230회</span>
-					<div class="line_badge">
-						<p>입찰 마감까지</p>
-						<p>23:58:55 남음</p>
-					</div>
-				</div>
-				<div class="item_info">
-					<div class="main_title">가로수길 대로변 인접 상가</div>
-					<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
-					<div class="item_price">
-						<div class="main_title">최저입찰가</div>
-						<div class="sub_title">4,300,000,000원</div>
-					</div>
-					<div class="item_tag">#토지/대지</div>
-					<div class="item_tag">#주거용건물/단독주택</div>
-				</div>
-			</div>
 		</article>
 	</section>
 
@@ -124,20 +146,20 @@
 		<div class="footer_wrap">
 			<div class="footer_nav">
 				<ul>
-					<li>경매야 물건 보기</li>
-					<li>경매야 스쿨</li>
-					<li>공지사항</li>
-					<li>자주 묻는 질문</li>
-					<li>보도자료</li>
-					<li>이메일 문의</li>
+					<li><a href="">경매야 물건 보기</a></li>
+					<li><a href="">경매야 스쿨</a></li>
+					<li><a href="">공지사항</a></li>
+					<li><a href="">자주 묻는 질문</a></li>
+					<li><a href="">보도자료</a></li>
+					<li><a href="">이메일 문의</a></li>
 				</ul>
 				<ul>
-					<li>셀러 신청</li>
-					<li>큐레이터 지원</li>
+					<li><a href="">셀러 신청</a></li>
+					<li><a href="">큐레이터 지원</a></li>
 				</ul>
 			</div>
 			<div class="company_info">
-				<img src="images/nextib_logo.svg" alt="회사로고">
+				<a href=""><img src="images/nextib_logo.svg" alt="회사로고"></a>
 				<div class="info">
 					<p>(주)넥스트아이비<span></span>대표자: 전영훈<span></span>사업자등록번호: 488-86-01896</p>
 					<p>서울시 강남로 테헤란로441 송암빌딩III, 2층<span></span>TEL. 070-5165-5225</p>
@@ -150,7 +172,9 @@
 
 	<footer class="footer_mob">
 		<div class="footer_nav">
-			<img src="images/nextib_logo.svg" alt="회사로고">
+			<a href="">
+				<img src="images/nextib_logo.svg" alt="회사로고">
+			</a>
 			<ul>
 				<li>셀러 신청</li>
 				<li>큐레이터 지원</li>
@@ -181,5 +205,25 @@
 			<p class="mgt_8">© 2020. NextIB All right reserved.</p>
 		</div>
 	</footer>
+
+	
+
+
+	<script>
+		new MultiClamp(document.getElementsByClassName('ellipsis2'), {
+			ellipsis: '...',
+			clamp: 2
+		});
+
+		function toggleSideNav() {
+			const sideNav = document.getElementsByClassName('side_nav')[0]
+			if(sideNav.style.left == '0px') {
+				sideNav.style.left = '100%'
+			}else if(sideNav.style.left == '100%') {
+				sideNav.style.left = 0;
+			}
+		}
+
+	</script>
 </body>
 </html>

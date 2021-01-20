@@ -40,7 +40,6 @@ body {
 
 section {
 	max-width: $max_width;
-	min-width: 1024px;
 	padding: 16px;
 	margin: 0 auto;
 }
@@ -52,7 +51,7 @@ section {
 }
 
 //button
-.button {
+button {
 	padding: 6px 24px;
 	background: $secondary;
 	color: white;
@@ -60,6 +59,34 @@ section {
 	font-size: 16px;
 	font-weight: 600;
 	text-align: center;
+	border: none;
+	cursor: pointer;
+	&.outline {
+		background: white;
+		border: 1px solid $secondary;
+		color: $secondary;
+		font-weight: 500;
+	}
+}
+
+input {
+	width: 100%;
+	border: 1px solid #c9cdd2;
+	padding: 16px;
+	font-size: 16px;
+	color: $black;
+	border-radius: 5px;
+	box-sizing: border-box;
+	&:placeholder {
+		color: #9ea4aa;
+	}
+}
+
+label {
+	width: 100%;
+	line-height: 2;
+	font-size: 16px;
+	color: $black;
 }
 
 .arrow {
@@ -130,7 +157,7 @@ section {
 
 @media screen and (max-width: 1024px) {
 	body {
-		padding-bottom: 434px;
+		padding-bottom: 0;
 		height: 100%;
 	}
 }

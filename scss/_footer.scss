@@ -17,16 +17,15 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	padding: 16px 0;
-	color: #c9cdd2;
 	border-bottom: 1px solid #454c53;
 	ul {
 		display: flex;
 		text-align: center;
-		li {
-			cursor: pointer;
+		a, li {
+			color: #c9cdd2;
 		}
 		&:last-child {
-			li {
+			a, li {
 				font-weight: bold;
 				color: white;
 			}
@@ -40,8 +39,8 @@ footer {
 .company_info {
 	display: flex;
 	align-items: flex-start;
-	margin-top: 24px;
-	margin-bottom: 18px;
+	padding-top: 24px;
+	padding-bottom: 18px;
 	color: #c9cdd2;
 	img {
 		width: 84px;
@@ -67,10 +66,17 @@ footer {
 	padding: 0 16px;
 	width: 100%;
 	box-sizing: border-box;
+	position: static;
 	.footer_nav {
 		padding: 16px 0;
 		line-height: 3;
+		img {
+			vertical-align: -8px;
+		}
 		> div {
+			p {
+				color: #c9cdd2;
+			}
 			p:first-child {
 				font-weight: 600;
 				color: #72787f;
@@ -107,7 +113,7 @@ footer {
 	.footer_mob {
 		.footer_nav {
 			&.mob {
-				padding: 16px 20px;
+				padding: 16px 0;
 			}
 		}
 	}

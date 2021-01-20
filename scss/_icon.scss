@@ -12,6 +12,18 @@
 	background: url(images/bell_32.svg);
 }
 
+*[class*="icon_24_"] {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+}
+.icon_24_hamberger {
+	background: url(images/hamberger_24.svg);
+}
+.icon_24_cancel {
+	background: url(images/cancel_24.svg);
+	cursor: pointer;
+}
 
 *[class*="icon_12_"] {
 	display: inline-block;
