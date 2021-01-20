@@ -1,0 +1,36 @@
+.login	{
+	max-width: 580px;
+	margin: 40px auto;
+	form {
+		width: 100%;
+		padding: 0;
+		margin-top: 40px;
+		.pw_box {
+			margin-top: 24px;
+		}
+		button {
+			width: 100%;
+			margin-top: 40px;
+			padding: 16px;
+		}
+	}
+	.sub_menu {
+		margin-top: 60px;
+		text-align: center;
+		a {
+			color: #72787f;
+			padding: 0 16px;
+			&:nth-child(2) {
+				border-left: 1px solid #72787f;
+				border-right: 1px solid #72787f;
+			}
+		}
+	}
+	.main_title {
+		width: 100%;
+		text-align: center;
+		font-size: 28px;
+		font-weight: bold;
+	}
+}
+
