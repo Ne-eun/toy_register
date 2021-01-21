@@ -1,3 +1,22 @@
+.arrow {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border: 2px solid $sub;
+	border-left: none;
+	border-top: none;
+	transform: rotate(-45deg);
+}
+
+.arrow_24 {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 2px solid $black;
+	border-left: none;
+	border-top: none;
+	transform: rotate(-45deg);
+}
 
 //icons
 *[class*="icon_32_"] {

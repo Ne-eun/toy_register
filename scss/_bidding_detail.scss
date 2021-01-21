@@ -1,0 +1,237 @@
+.main_title {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	margin: 40px 0;
+}
+.bidding_detail {
+	max-width: 1200px;
+	padding: 16px;
+	padding-bottom: 0;
+	display: flex;
+	article + article {
+		border-top: 1px solid #e8ebed;
+	}
+}
+
+.bidding_info {
+	width: 100%;
+	.title_box_1 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		p {
+			font-size: 16px;
+		}
+		small {
+			font-size: 12px;
+			color: $sub;
+		}
+	}
+	.title_box_2 {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 4px;
+		.box_left {
+			p {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			small {
+				font-size: 14px;
+				color: $sub;
+			}
+		}
+		.box_right {
+			width: 52px;
+			background-color: $secondary;
+			text-align: center;
+			box-sizing: border-box;
+			border-radius: 5px;
+			color: white;
+			img {
+				vertical-align: -10px;
+			}
+		}
+	}
+	.img_description {
+		img {
+			width: 100%;
+		}
+	}
+}
+.info_wide_right {
+	min-width: 376px;
+	border: 1px solid #e8ebed;
+	padding: 0;
+	.top_menus {
+		width: 100%;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		background-color:#454c53;
+		div {
+			padding-left: 20px;
+			color: white;
+			line-height: 40px;
+			position: relative;
+			&+div {
+				margin-left: 32px;
+			}
+			&:before {
+				content: "";
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				left: 0;
+				top: 12px;
+			}
+		}
+		.history:before {
+			background: url(images/history_16.svg)
+		}
+		.interest:before {
+			background: url(images/star_16.svg)
+		}
+		.share:before {
+			background: url(images/share_16.svg)
+		}
+	}
+
+	[class*="bidding_info_"] {
+		padding: 16px;
+		label {
+			font-weight: bold;
+		}
+		>div+div {
+			margin-top: 20px;
+		}
+		.text_box{
+			position: relative;
+			background-color: #f7f8f9;
+			color: #454c53;
+			padding: 16px;
+			border-radius: 5px;
+			font-size: 16px;
+			strong {
+				font-size: 16px;
+			}
+			&.square_meter:after {
+				content: '㎡';
+				font-size: 16px;
+				font-weight: bold;
+				color: #9ea4aa;
+				position: absolute;
+				right: 16px;
+			}
+			&.won:after {
+				content: '원';
+				font-size: 16px;
+				font-weight: bold;
+				color: #9ea4aa;
+				position: absolute;
+				right: 16px;
+			}
+			&.won.square_meter:after {
+				content: '원/㎡';
+			}
+		}
+	}
+	.bidding_info_1 {
+		.bidding_period input {
+			text-align: center;
+			color: #454c53;
+		}
+		.opening_date {
+			margin-top: 24px;
+			input {
+				text-align: center;
+				font-weight: 600;
+				color: #454c53;
+			}
+		}
+	}
+
+	.bidding_info_2 {
+		.size_box {
+			p {
+				font-size: 16px;
+				font-weight: 600;
+				.refresh_10 {
+					position: relative;
+					font-size: 10px;
+					padding: 0 2px;
+					padding-left: 16px;
+					border: 1px solid #454c53;
+					border-radius: 3px;
+					vertical-align: 1px;
+					&:before {
+						content: "";
+						position: absolute;
+						left: 4px;
+						top: 3px;
+						width: 10px;
+						height: 10px;
+						background: url(images/refresh_10.svg);
+					}
+				}
+			}
+		}
+		.size {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 16px;
+			.size1, .size2 {
+				> label {
+					font-size: 14px;
+					font-weight: 400;
+					color: #72787f;
+				}
+			}
+		}
+	}
+
+	.bidding_info_3 {
+		.sub_title {
+			display: flex;
+			justify-content: space-between;
+			color: $sub;
+			margin-bottom: 8px;
+			button {
+				font-size: 12px;
+				font-weight: 500;
+				padding: 2px 10px;
+				border-radius: 2em;
+				.arrow {
+					border-color: white;
+				}
+			}
+		}
+		.min_price {
+			label {
+				color: $primary;
+			}
+			div {
+				background-color: transparent;
+				border: 2px solid $primary;
+				box-sizing: border-box;
+				color: $primary;
+				font-weight: bold;
+				font-size: 18px;
+			}
+		}
+		.button_box {
+			width: 100%;
+			button {
+				width: 100%;
+				padding: 16px;
+			}
+			button + button {
+				margin-top: 16px;
+			}
+			.outline {
+				font-weight: bold;
+			}
+		}
+	}
+}

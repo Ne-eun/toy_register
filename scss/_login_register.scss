@@ -1,0 +1,77 @@
+.login, .register	{
+	max-width: 580px;
+	margin: 40px auto;
+	.title_box{
+		position: relative;
+		.arrow_24 {
+			position: absolute;
+			display: none;
+			top: 12px;
+			left: 4px;
+			transform: rotate(135deg);
+		}
+	}
+	form {
+		width: 100%;
+		padding: 0;
+		margin-top: 40px;
+		div+div {
+			margin-top: 24px;
+		}
+		button {
+			width: 100%;
+			margin-top: 40px;
+			padding: 16px;
+		}
+	}
+	.sub_menu {
+		margin-top: 60px;
+		text-align: center;
+		a {
+			color: #72787f;
+			padding: 0 16px;
+			&:nth-child(2) {
+				border-left: 1px solid #72787f;
+				border-right: 1px solid #72787f;
+			}
+		}
+	}
+	.main_title {
+		width: 100%;
+		text-align: center;
+		font-size: 28px;
+		font-weight: bold;
+	}
+}
+
+.terms {
+	display: flex;
+	align-items: center;
+	input {
+		min-width: 20px;
+	}
+	label {
+		font-size: 14px;
+		padding: 0 10px;
+		line-height: 1;
+		display: inline;
+		width: auto;
+	}
+	span {
+		color: $danger;
+		font-size: 12px;
+	}
+	div {
+		margin-left: auto;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.login, .register {
+		.title_box {
+			.arrow_24 {
+				display:inline-block;
+			}
+		}
+	}
+}
