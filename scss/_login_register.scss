@@ -1,6 +1,7 @@
 .login, .register	{
 	max-width: 580px;
-	margin: 40px auto;
+	margin: 0 auto;
+	margin-bottom: 80px;
 	.title_box{
 		position: relative;
 		.arrow_24 {
@@ -41,6 +42,22 @@
 		text-align: center;
 		font-size: 28px;
 		font-weight: bold;
+	}
+
+	.field_wrap {
+		.description {
+			display: none;
+			color: red;
+			font-size: 12px;
+		}
+		&.err {
+			.description {
+				display: block;
+			}
+			input {
+				border-color: red;
+			}
+		}
 	}
 }
 

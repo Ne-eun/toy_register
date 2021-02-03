@@ -179,6 +179,10 @@ body {
   box-sizing: border-box;
 }
 
+body .content-wrap {
+  min-height: calc(100vh - 300px);
+}
+
 section {
   max-width: 1200px;
   padding: 16px;
@@ -330,6 +334,7 @@ label {
   border-left: none;
   border-top: none;
   transform: rotate(-45deg);
+  transition: transform ease 0.2s;
 }
 
 .arrow_24 {
@@ -340,6 +345,7 @@ label {
   border-left: none;
   border-top: none;
   transform: rotate(-45deg);
+  transition: transform ease 0.2s;
 }
 
 *[class*="icon_32_"] {
@@ -423,7 +429,7 @@ header {
   background: rgba(0, 0, 0, 0.75);
   position: fixed;
   top: 0;
-  left: 0;
+  left: 100%;
   bottom: 0;
   display: flex;
   padding: 0;
@@ -763,7 +769,7 @@ footer .footer_wrap {
   padding: 16px;
 }
 
-.item_card .item_info > .main_title {
+.item_card .item_info > .main_title_d {
   font-size: 18px;
   color: #454c53;
 }
@@ -835,7 +841,8 @@ footer .footer_wrap {
 
 .login, .register {
   max-width: 580px;
-  margin: 40px auto;
+  margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .login .title_box, .register .title_box {
@@ -888,6 +895,20 @@ footer .footer_wrap {
   font-weight: bold;
 }
 
+.login .field_wrap .description, .register .field_wrap .description {
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+
+.login .field_wrap.err .description, .register .field_wrap.err .description {
+  display: block;
+}
+
+.login .field_wrap.err input, .register .field_wrap.err input {
+  border-color: red;
+}
+
 .terms {
   display: flex;
   align-items: center;
@@ -927,6 +948,59 @@ footer .footer_wrap {
   margin: 40px 0;
 }
 
+.bidding_detail_top_menus, .info_wide_right .top_menus {
+  display: none;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-color: #454c53;
+}
+
+.bidding_detail_top_menus div, .info_wide_right .top_menus div {
+  padding-left: 20px;
+  color: white;
+  line-height: 40px;
+  position: relative;
+}
+
+.bidding_detail_top_menus div + div, .info_wide_right .top_menus div + div {
+  margin-left: 32px;
+}
+
+.bidding_detail_top_menus div:before, .info_wide_right .top_menus div:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.bidding_detail_top_menus small, .info_wide_right .top_menus small {
+  color: white;
+  margin-left: auto;
+}
+
+.bidding_detail_top_menus .history:before, .info_wide_right .top_menus .history:before {
+  background: url(images/history_16.svg);
+}
+
+.bidding_detail_top_menus .interest:before, .info_wide_right .top_menus .interest:before {
+  background: url(images/star_16.svg);
+}
+
+.bidding_detail_top_menus .share:before, .info_wide_right .top_menus .share:before {
+  background: url(images/share_16.svg);
+}
+
+.bidding_detail_top_menus {
+  display: none;
+}
+
 .bidding_detail {
   max-width: 1200px;
   padding: 16px;
@@ -936,6 +1010,163 @@ footer .footer_wrap {
 
 .bidding_detail article + article {
   border-top: 1px solid #e8ebed;
+}
+
+.bidding_detail .info_wide_right {
+  min-width: 376px;
+  border: 1px solid #e8ebed;
+  padding: 0;
+}
+
+.bidding_detail .info_wide_right .top_menus {
+  display: block;
+}
+
+.bidding_detail [class*="bidding_info_"] {
+  padding: 16px;
+}
+
+.bidding_detail [class*="bidding_info_"] label {
+  font-weight: bold;
+}
+
+.bidding_detail [class*="bidding_info_"] > div + div {
+  margin-top: 20px;
+}
+
+.bidding_detail [class*="bidding_info_"] .text_box {
+  position: relative;
+  background-color: #f7f8f9;
+  color: #454c53;
+  padding: 16px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.bidding_detail [class*="bidding_info_"] .text_box strong {
+  font-size: 16px;
+}
+
+.bidding_detail [class*="bidding_info_"] .text_box.square_meter:after {
+  content: '㎡';
+  font-size: 16px;
+  font-weight: bold;
+  color: #9ea4aa;
+  position: absolute;
+  right: 16px;
+}
+
+.bidding_detail [class*="bidding_info_"] .text_box.won:after {
+  content: '원';
+  font-size: 16px;
+  font-weight: bold;
+  color: #9ea4aa;
+  position: absolute;
+  right: 16px;
+}
+
+.bidding_detail [class*="bidding_info_"] .text_box.won.square_meter:after {
+  content: '원/㎡';
+}
+
+.bidding_detail .bidding_info_1 .bidding_period input {
+  text-align: center;
+  color: #454c53;
+}
+
+.bidding_detail .bidding_info_1 .opening_date {
+  margin-top: 24px;
+}
+
+.bidding_detail .bidding_info_1 .opening_date input {
+  text-align: center;
+  font-weight: 600;
+  color: #454c53;
+}
+
+.bidding_detail .bidding_info_2 .size_box p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bidding_detail .bidding_info_2 .size_box p .refresh_10 {
+  position: relative;
+  font-size: 10px;
+  padding: 0 2px;
+  padding-left: 16px;
+  border: 1px solid #454c53;
+  border-radius: 3px;
+  vertical-align: 1px;
+}
+
+.bidding_detail .bidding_info_2 .size_box p .refresh_10:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  background: url(images/refresh_10.svg);
+}
+
+.bidding_detail .bidding_info_2 .size {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.bidding_detail .bidding_info_2 .size .size1 > label, .bidding_detail .bidding_info_2 .size .size2 > label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #72787f;
+}
+
+.bidding_detail .bidding_info_3 .sub_title {
+  display: flex;
+  justify-content: space-between;
+  color: #72787f;
+  margin-bottom: 8px;
+}
+
+.bidding_detail .bidding_info_3 .sub_title button {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: 2em;
+}
+
+.bidding_detail .bidding_info_3 .sub_title button .arrow {
+  border-color: white;
+}
+
+.bidding_detail .bidding_info_3 .min_price label {
+  color: #ff6b6b;
+}
+
+.bidding_detail .bidding_info_3 .min_price div {
+  background-color: transparent;
+  border: 2px solid #ff6b6b;
+  box-sizing: border-box;
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.bidding_detail .bidding_info_3 .button_box {
+  width: 100%;
+}
+
+.bidding_detail .bidding_info_3 .button_box button {
+  width: 100%;
+  padding: 16px;
+}
+
+.bidding_detail .bidding_info_3 .button_box button + button {
+  margin-top: 16px;
+}
+
+.bidding_detail .bidding_info_3 .button_box .outline {
+  font-weight: bold;
 }
 
 .bidding_info {
@@ -986,199 +1217,303 @@ footer .footer_wrap {
   vertical-align: -10px;
 }
 
+.bidding_info .img_description {
+  margin: 8px -16px 0 -16px;
+  padding: 16px;
+  padding-bottom: 32px;
+  border-bottom: 8px solid #e8ebed;
+}
+
 .bidding_info .img_description img {
   width: 100%;
 }
 
-.info_wide_right {
-  min-width: 376px;
-  border: 1px solid #e8ebed;
-  padding: 0;
-}
-
-.info_wide_right .top_menus {
+.bidding_info .img_description ul {
   width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  background-color: #454c53;
-}
-
-.info_wide_right .top_menus div {
-  padding-left: 20px;
-  color: white;
-  line-height: 40px;
-  position: relative;
-}
-
-.info_wide_right .top_menus div + div {
-  margin-left: 32px;
-}
-
-.info_wide_right .top_menus div:before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  left: 0;
-  top: 12px;
-}
-
-.info_wide_right .top_menus .history:before {
-  background: url(images/history_16.svg);
-}
-
-.info_wide_right .top_menus .interest:before {
-  background: url(images/star_16.svg);
-}
-
-.info_wide_right .top_menus .share:before {
-  background: url(images/share_16.svg);
-}
-
-.info_wide_right [class*="bidding_info_"] {
-  padding: 16px;
-}
-
-.info_wide_right [class*="bidding_info_"] label {
-  font-weight: bold;
-}
-
-.info_wide_right [class*="bidding_info_"] > div + div {
-  margin-top: 20px;
-}
-
-.info_wide_right [class*="bidding_info_"] .text_box {
-  position: relative;
   background-color: #f7f8f9;
-  color: #454c53;
   padding: 16px;
-  border-radius: 5px;
-  font-size: 16px;
+  margin-top: 40px;
+  color: #454c53;
+  line-height: 1.8;
+  box-sizing: border-box;
 }
 
-.info_wide_right [class*="bidding_info_"] .text_box strong {
-  font-size: 16px;
+.bidding_info .img_description ul em {
+  color: #ee3239;
+  font-weight: bold;
+  font-style: normal;
 }
 
-.info_wide_right [class*="bidding_info_"] .text_box.square_meter:after {
-  content: '㎡';
+.bidding_info .img_description .badge {
+  position: static;
+  border-radius: 2em;
+  padding: 4px 10px;
+  background-color: #f6ebef;
+  color: #1b1d1f;
+  font-size: 12px;
+}
+
+.bidding_info .img_description .badge:nth-child(2n) {
+  background-color: #ddedf9;
+}
+
+.bidding_info .img_description .badge + .badge {
+  margin-left: 8px;
+}
+
+.bidding_info .others, .bidding_info .responsibility {
+  margin: 0 -16px;
+  padding: 24px;
+  border-bottom: 8px solid #e8ebed;
+  box-sizing: border-box;
+}
+
+.bidding_info .others .title, .bidding_info .responsibility .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bidding_info .others .title p, .bidding_info .responsibility .title p {
   font-size: 16px;
   font-weight: bold;
-  color: #9ea4aa;
-  position: absolute;
-  right: 16px;
 }
 
-.info_wide_right [class*="bidding_info_"] .text_box.won:after {
-  content: '원';
-  font-size: 16px;
-  font-weight: bold;
-  color: #9ea4aa;
-  position: absolute;
-  right: 16px;
-}
-
-.info_wide_right [class*="bidding_info_"] .text_box.won.square_meter:after {
-  content: '원/㎡';
-}
-
-.info_wide_right .bidding_info_1 .bidding_period input {
-  text-align: center;
-  color: #454c53;
-}
-
-.info_wide_right .bidding_info_1 .opening_date {
-  margin-top: 24px;
-}
-
-.info_wide_right .bidding_info_1 .opening_date input {
-  text-align: center;
-  font-weight: 600;
-  color: #454c53;
-}
-
-.info_wide_right .bidding_info_2 .size_box p {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.info_wide_right .bidding_info_2 .size_box p .refresh_10 {
-  position: relative;
-  font-size: 10px;
-  padding: 0 2px;
-  padding-left: 16px;
-  border: 1px solid #454c53;
-  border-radius: 3px;
-  vertical-align: 1px;
-}
-
-.info_wide_right .bidding_info_2 .size_box p .refresh_10:before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 3px;
+.bidding_info .others .title .arrow_24, .bidding_info .responsibility .title .arrow_24 {
+  border-color: #1b1d1f;
   width: 10px;
   height: 10px;
-  background: url(images/refresh_10.svg);
+  transform: rotate(45deg);
 }
 
-.info_wide_right .bidding_info_2 .size {
+.bidding_info .others .content, .bidding_info .responsibility .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease 0.3s;
+}
+
+.bidding_info .others .content > div, .bidding_info .responsibility .content > div {
+  background-color: #f7f8f9;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.bidding_info .others.on .arrow_24, .bidding_info .responsibility.on .arrow_24 {
+  transform: rotate(-135deg);
+}
+
+.bidding_info .others.on .content, .bidding_info .responsibility.on .content {
+  max-height: 1000px;
+  transition: max-height ease 0.3s;
+}
+
+.bidding_info .others ul {
+  background-color: #f7f8f9;
+  overflow: hidden;
+}
+
+.bidding_info .others ul li {
+  color: #454c53;
+  line-height: 1.8;
+}
+
+.bidding_info .others .fnq {
+  background-color: #f7f8f9;
+  padding-top: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #004df0;
+}
+
+.bidding_info .others .fnq span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(images/mail_16.svg);
+  vertical-align: -4px;
+  margin-right: 4px;
+}
+
+.bidding_info .responsibility {
+  border-bottom: none;
+}
+
+.bidding_info .responsibility .content p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #454c53;
+  line-height: 1.8;
+}
+
+.bidding_info .responsibility .content p:first-child {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bidding_info .responsibility .content button {
+  width: 100%;
+  background-color: #33658a;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.bidding_info .more_info {
+  background-color: #f7f8f9;
+  margin: 0 -16px;
+  margin-bottom: -16px;
+  padding: 16px;
+  padding-bottom: 80px;
+  border: none;
+}
+
+.bidding_info .more_info .more_tap {
+  width: 100%;
+  display: flex;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #c9cdd2;
+}
+
+.bidding_info .more_info .more_tap span {
+  padding: 10px;
+  padding-top: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bidding_info .more_info .more_tap span.on {
+  position: relative;
+  font-weight: bold;
+  color: #1a535c;
+}
+
+.bidding_info .more_info .more_tap span.on:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #1a535c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bidding_info .more_info .videos {
+  display: none;
+}
+
+.bidding_info .more_info .videos.on {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
-.info_wide_right .bidding_info_2 .size .size1 > label, .info_wide_right .bidding_info_2 .size .size2 > label {
-  font-size: 14px;
-  font-weight: 400;
+.bidding_info .more_info .videos .content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 8px;
+}
+
+.bidding_info .more_info .videos .content p {
+  font-size: 12px;
   color: #72787f;
 }
 
-.info_wide_right .bidding_info_3 .sub_title {
+.bidding_info .more_info .videos .content .theme {
+  font-size: 12px;
+  color: #9ea4aa;
+}
+
+.bidding_info .more_info .videos .content strong {
+  font-size: 14px;
+  color: #1b1d1f;
+}
+
+.bidding_info .more_info .videos .content .author {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bidding_info .more_info .files {
+  display: none;
+}
+
+.bidding_info .more_info .files.on {
+  display: block;
+}
+
+.bidding_info .more_info .files > div {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  color: #72787f;
-  margin-bottom: 8px;
-}
-
-.info_wide_right .bidding_info_3 .sub_title button {
-  font-size: 12px;
-  font-weight: 500;
-  padding: 2px 10px;
-  border-radius: 2em;
-}
-
-.info_wide_right .bidding_info_3 .sub_title button .arrow {
-  border-color: white;
-}
-
-.info_wide_right .bidding_info_3 .min_price label {
-  color: #ff6b6b;
-}
-
-.info_wide_right .bidding_info_3 .min_price div {
-  background-color: transparent;
-  border: 2px solid #ff6b6b;
-  box-sizing: border-box;
-  color: #ff6b6b;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.info_wide_right .bidding_info_3 .button_box {
-  width: 100%;
-}
-
-.info_wide_right .bidding_info_3 .button_box button {
-  width: 100%;
   padding: 16px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: white;
 }
 
-.info_wide_right .bidding_info_3 .button_box button + button {
-  margin-top: 16px;
+.bidding_info .more_info .files > div + div {
+  margin-top: 8px;
 }
 
-.info_wide_right .bidding_info_3 .button_box .outline {
-  font-weight: bold;
+.bidding_info .more_info .link {
+  width: 20px;
+  height: 20px;
+  background: url(images/external_20.svg);
+}
+
+.bidding_info .more_info .download {
+  width: 20px;
+  height: 20px;
+  background: url(images/download_20.svg);
+}
+
+.bidding_info .bidding_info_1,
+.bidding_info .bidding_info_2,
+.bidding_info .bidding_info_3 {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .info_wide_right {
+    display: none;
+  }
+  .bidding_detail {
+    padding: 0;
+  }
+  .bidding_detail .bidding_info .title_box_1 small {
+    display: none;
+  }
+  .bidding_detail .bidding_info .img_description {
+    border-bottom: none;
+  }
+  .bidding_detail .bidding_info .others {
+    border-top: 8px solid #e8ebed;
+  }
+  .bidding_detail .bidding_info .responsibility {
+    border-bottom: 8px solid #e8ebed;
+  }
+  .bidding_detail .bidding_detail_top_menus {
+    display: flex;
+    margin-left: -16px;
+  }
+  .bidding_detail .bidding_info_1,
+  .bidding_detail .bidding_info_2 {
+    display: block;
+  }
+  .bidding_detail .bidding_info_3 {
+    display: block;
+  }
+  .bidding_detail .bidding_info_3 .button_box {
+    display: flex;
+  }
+  .bidding_detail .bidding_info_3 .button_box button + button {
+    margin-top: 0;
+    margin-left: 8px;
+  }
+  .bidding_detail .more_info {
+    margin-top: 10%;
+  }
 }

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script src="../js.js"></script>
 	<link rel="stylesheet" href="../test.css">
 </head>
 <body>
@@ -65,8 +66,15 @@
 <!--[e] //반응형 메뉴 사이드바 -->
 	
 	<p class="main_title">물건상세</p>
+	<article class="bidding_detail_top_menus">
+		<div class="history">낙찰이력</div>
+		<div class="interest">관심등록</div>
+		<div class="share">물건공유</div>
+		<small>조회: 4,320</small>
+	</article>
+	
 	<section class="bidding_detail">
-		<section class="bidding_info">
+		<section class="bidding_info"> 
 			<div class="title_box_1">
 				<p>물건번호 2021_0001</p>
 				<small>조회: 4,320</small>
@@ -85,6 +93,176 @@
 
 			<article class="img_description">
 				<img src="../images/ex_img.png" alt="예시이미지">
+				<ul>
+					<li>· 에코 스포츠센터 북쪽 인근에 위치하며 부근은 농경지(전), 중소공장, 임야 등으로 형성되어 있는 대체로 평탄한 타원형 토지</li>
+					<li>· 인근까지 차량 접근 용이하며 시내버스 정류장이 근처에 위치하여 대중교통사정은 보통시 됨</li>
+					<li>· 경작지로 사용되고 있으며, 현재 경작 준비중에 있음</li>
+					<li>· 총 토지 총면적 2,492㎡ (753.8평) 중 <em>1,246㎡ (376.9평) 1/2 분할 매각</em></li>
+					<li>· <strong>전문가멘트 :</strong> 본 물건은 감정가 및 공시지가 보다 저렴한 농지로써 저렴한 반값 농지 및 추후 농지연금 활용으로 적합합니다.</li>
+				</ul>
+				<div class="mgt_16">
+					<span class="badge">#농지경매</span>
+					<span class="badge">#농지연금</span>
+					<span class="badge">#반값농지</span>
+					<span class="badge">#농지투자</span>
+				</div>
+			</article>
+
+			<article class="bidding_info_1">
+				<div class="bidding_period">
+					<label>입찰기간</label>
+					<div class="text_box txt_center">2020.02.02 11:00 ~ 2020.02.09 11:00</div>
+				</div>
+				<div class="opening_date">
+					<label>개찰일시</label>
+					<div class="text_box bold txt_center">2020.02.02 18:00</div>
+				</div>
+			</article>
+
+			<article class="bidding_info_2">
+				<div class="use">
+					<label>용도</label>
+					<div class="text_box">토지 > <strong>전</strong></div>
+				</div>
+				<div class="size_box">
+					<p>면적<span class="mgl_8 refresh_10">평</span></p>
+					<div class="size">
+						<div class="size1">
+							<label>토지면적</label>
+							<div class="text_box bold square_meter">2,492</div>
+						</div>
+						<div class="size2">
+							<label>매각면적</label>
+							<div class="text_box bold square_meter">1,246</div>
+						</div>
+					</div>
+				</div>
+				<div class="price">
+					<label>공시지가</label>
+					<div class="text_box square_meter won">119,100</div>
+				</div>
+			</article>
+
+			<article class="others on">
+				<div class="title">
+					<p>기타사항</p>
+					<div class="arrow_24"></div>
+				</div>
+				<div class="content">
+					<div>
+						<ul>
+							<li>· 해당 농지를 취득하려는 자는 농지취득자격증명원 발급이 필요합니다.</li>
+							<li>· 낙찰자는 일체의 중개수수료 없이 경매야 서비스와 제휴중인 공인중개사 또는 변호사를 통해 안전하게 소유권 이전 등기를 할 수 있습니다. 다만 취등록세 등 제반 등기비용은 낙찰자 본인이 부담합니다.</li>
+							<li>· ½분할매각으로 인해 최초 계약이후 분할측량까지(2~3개월) 소요될 수 있습니다.</li>
+							<li>· 더 자세한 정보는 경매야 카카오톡 채널 또는 담당 공인중개사에게 문의 바랍니다.</li>
+						</ul>
+						<p class="fnq"><span></span>담당 공인중개사에게 문의하기</p>
+					</div>
+				</div>
+			</article>
+
+			<article class="responsibility on">
+				<div class="title" onclick="toggleAccordion()">
+					<p>담당 중개사</p>
+					<div class="arrow_24"></div>
+				</div>
+				<div class="content">
+					<div>
+						<p>랜드공인중개사무소</p>
+						<p>서울시 강남구 강남로</p>
+						<p>대표 김사랑 &#124; 중개등록번호 123</p>
+						<p>대표전호 02-123-1234</p>
+					</div>
+					<button>문의하기</button>
+				</div>
+			</article>
+
+			<article class="bidding_info_3">
+				<div class="evaluation">
+					<label>감정평가액</label>
+					<div class="sub_title">
+						<p>북부감정평가사(2019.06.11)</p>
+						<button>감정평가서<span class="arrow mgl_4"></span></button>
+					</div>
+					<div class="text_box won">119,100</div>
+				</div>
+				<div class="min_price">
+					<label>최저입찰가액</label>
+					<div class="text_box won">119,100</div>
+				</div>
+				<div class="deposit">
+					<label>입찰보증금(10%)</label>
+					<div class="text_box won">119,100</div>
+				</div>
+
+				<div class="button_box mgt_40">
+					<button class="outline">낙찰가 맞추기(1/1)</button>
+					<button>정식 입찰</button>
+				</div>
+			</article>
+
+			<article class="more_info">
+				<div class="more_tap">
+					<span class="on">관련영상</span>
+					<span>추가 자료</span>
+				</div>
+				<div class="videos on">
+					<div class="content">
+						<div class="thumbnail16_9"><img src="../images/ex_img.png" alt="예시 이미지"></div>
+						<div>
+							<p class="theme">물건분석</p>
+							<strong>서래마을 2층 단독주택 물건 분석</strong>
+
+							<p class="author mgt_8">경매야</p>
+							<p>조회수 123,232회</p>
+						</div>
+					</div>
+
+					<div class="content">
+						<div class="thumbnail16_9"><img src="../images/ex_img.png" alt="예시 이미지"></div>
+						<div>
+							<p class="theme">물건분석</p>
+							<strong>서래마을 2층 단독주택 물건 분석</strong>
+
+							<p class="author mgt_8">경매야</p>
+							<p>조회수 123,232회</p>
+						</div>
+					</div>
+
+					<div class="content">
+						<div class="thumbnail16_9"><img src="../images/ex_img.png" alt="예시 이미지"></div>
+						<div>
+							<p class="theme">물건분석</p>
+							<strong>서래마을 2층 단독주택 물건 분석</strong>
+
+							<p class="author mgt_8">경매야</p>
+							<p>조회수 123,232회</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="files">
+					<div>
+						<p class="bold">토지이용계획</p>
+						<div class="link"></div>
+					</div>
+					<div>
+						<p>2021-0001_토지등기.pdf</p>
+						<div class="download"></div>
+					</div>
+					<div>
+						<p>2021-0001_토지등기.pdf</p>
+						<div class="download"></div>
+					</div>
+					<div>
+						<p>2021-0001_토지등기.pdf</p>
+						<div class="download"></div>
+					</div>
+					<div>
+						<p>2021-0001_토지등기.pdf</p>
+						<div class="download"></div>
+					</div>
+				</div>
 			</article>
 		</section>
 
@@ -220,5 +398,11 @@
 		</div>
 	</footer>
 
+	<script>
+		function toggleAccordion() {
+			console.log(this)
+		}
+		
+	</script>
 </body>
 </html>

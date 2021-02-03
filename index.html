@@ -6,6 +6,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="test.css">
 	<script src="/node_modules/multi-clamp/MultiClamp.min.js"></script>
+	<script src="js.js"></script>
 </head>
 <body>
 	<header>
@@ -21,125 +22,127 @@
 		<div class="nav_icons">
 			<span class="icon_32_search"></span>
 			<span class="icon_32_notibell"></span>
-			<button class="flex_right">로그인</button>
+			<button class="flex_right" onclick="location.href='pages/login.html'">로그인</button>
 			<div class="icon_24_hamberger" onclick="toggleSideNav()"></div>
 		</div>
 	</header>
 
-	<!-- //반응형 메뉴 사이드바 -->
-	<section class="side_nav" style="left: 100%">
-		<div class="background">
-			<div class="icon_24_cancel" onclick="toggleSideNav()"></div>
-			<div class="auth_buttons">
-				<button class="outline">회원가입</button>
-				<button>로그인</button>
-			</div>
-			<p class="auth_description">로그인 후 더 다양한 서비스를 이용하세요.</p>
+	<section class="content-wrap">
+		<!-- //반응형 메뉴 사이드바 -->
+		<section class="side_nav" style="left: 100%">
+			<div class="background">
+				<div class="icon_24_cancel" onclick="toggleSideNav()"></div>
+				<div class="auth_buttons">
+					<button class="outline">회원가입</button>
+					<button onlick="location.href='/pages/index.html'">로그인</button>
+				</div>
+				<p class="auth_description">로그인 후 더 다양한 서비스를 이용하세요.</p>
 
-			<div class="menus">
-				<a href="">경매야 물건 목록</a>
-				<a href="">경매야 스쿨</a>
-				<a href="">마이페이지</a>
-			</div>
+				<div class="menus">
+					<a href="">경매야 물건 목록</a>
+					<a href="">경매야 스쿨</a>
+					<a href="">마이페이지</a>
+				</div>
 
-			<div class="event">
-				<div class="title">이벤트</div>
-				<!-- <p>진행중인 이벤트가 없습니다.</p> -->
-				<div class="event_item">
+				<div class="event">
+					<div class="title">이벤트</div>
+					<!-- <p>진행중인 이벤트가 없습니다.</p> -->
+					<div class="event_item">
+						<div class="thumbnail16_9">
+							<img src="" alt="">
+						</div>
+						<div class="item_info">
+							<p class="title ellipsis2">이벤트명을 시작중입니다 원해시는 분은 해당 글을 클릭하세요오오옹 이벤트 이벤트으으으으</p>
+							<p class="sub_title">20.00.00 ~ 20.00.00</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="menus">
+					<a href="">공지사항</a>
+					<a href="">자주 묻는 질문</a>
+					<a href="">보도자료</a>
+				</div> 
+			</div>
+		</section>
+
+
+		<section class="now_bidding">
+			<article class="bidding_title">
+				<div class="main_title">지금 입찰중!</div>
+					<div class="sub_title">전체보기 <span class="arrow"></span></div>
+				</div>
+			</article>
+
+			<article class="now_bidding_list">
+				<div class="item_card">
 					<div class="thumbnail16_9">
-						<img src="" alt="">
+						<img src="images/ex_back.jpg" alt="예시 이미지" />
+						<span class="badge left">입찰중</span>
+						<span class="badge right trans_black">조회수 4,230회</span>
+						<div class="line_badge">
+							<p>입찰 마감까지</p>
+							<p>23:58:55 남음</p>
+						</div>
 					</div>
 					<div class="item_info">
-						<p class="title ellipsis2">이벤트명을 시작중입니다 원해시는 분은 해당 글을 클릭하세요오오옹 이벤트 이벤트으으으으</p>
-						<p class="sub_title">20.00.00 ~ 20.00.00</p>
+						<div class="main_title_d">가로수길 대로변 인접 상가</div>
+						<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
+						<div class="item_price">
+							<div class="main_title_d">최저입찰가</div>
+							<div class="sub_title">4,300,000,000원</div>
+						</div>
+						<div class="item_tag">#토지/대지</div>
+						<div class="item_tag">#주거용건물/단독주택</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="menus">
-				<a href="">공지사항</a>
-				<a href="">자주 묻는 질문</a>
-				<a href="">보도자료</a>
-			</div> 
-		</div>
-	</section>
-
-
-	<section class="now_bidding">
-		<article class="bidding_title">
-			<div class="main_title">지금 입찰중!</div>
-				<div class="sub_title">전체보기 <span class="arrow"></span></div>
-			</div>
-		</article>
-
-		<article class="now_bidding_list">
-			<div class="item_card">
-				<div class="thumbnail16_9">
-					<img src="images/ex_back.jpg" alt="예시 이미지" />
-					<span class="badge left">입찰중</span>
-					<span class="badge right trans_black">조회수 4,230회</span>
-					<div class="line_badge">
-						<p>입찰 마감까지</p>
-						<p>23:58:55 남음</p>
+				<div class="item_card">
+					<div class="thumbnail16_9">
+						<img src="images/ex_back.jpg" alt="예시 이미지" />
+						<span class="badge left waitng">입찰대기중</span>
+						<span class="badge right trans_black">조회수 4,230회</span>
+						<div class="line_badge">
+							<p>입찰 마감까지</p>
+							<p>23:58:55 남음</p>
+						</div>
+					</div>
+					<div class="item_info">
+						<div class="main_title_d">가로수길 대로변 인접 상가</div>
+						<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
+						<div class="item_price">
+							<div class="main_title_d">최저입찰가</div>
+							<div class="sub_title">4,300,000,000원</div>
+						</div>
+						<div class="item_tag">#토지/대지</div>
+						<div class="item_tag">#주거용건물/단독주택</div>
 					</div>
 				</div>
-				<div class="item_info">
-					<div class="main_title">가로수길 대로변 인접 상가</div>
-					<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
-					<div class="item_price">
-						<div class="main_title">최저입찰가</div>
-						<div class="sub_title">4,300,000,000원</div>
-					</div>
-					<div class="item_tag">#토지/대지</div>
-					<div class="item_tag">#주거용건물/단독주택</div>
-				</div>
-			</div>
 
-			<div class="item_card">
-				<div class="thumbnail16_9">
-					<img src="images/ex_back.jpg" alt="예시 이미지" />
-					<span class="badge left waitng">입찰대기중</span>
-					<span class="badge right trans_black">조회수 4,230회</span>
-					<div class="line_badge">
-						<p>입찰 마감까지</p>
-						<p>23:58:55 남음</p>
+				<div class="item_card">
+					<div class="thumbnail16_9">
+						<img src="images/ex_back.jpg" alt="예시 이미지" />
+						<span class="badge left waitng">입찰대기중</span>
+						<span class="badge right trans_black">조회수 4,230회</span>
+						<div class="line_badge">
+							<p>입찰 마감까지</p>
+							<p>23:58:55 남음</p>
+						</div>
 					</div>
-				</div>
-				<div class="item_info">
-					<div class="main_title">가로수길 대로변 인접 상가</div>
-					<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
-					<div class="item_price">
-						<div class="main_title">최저입찰가</div>
-						<div class="sub_title">4,300,000,000원</div>
+					<div class="item_info">
+						<div class="main_title_d">가로수길 대로변 인접 상가</div>
+						<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
+						<div class="item_price">
+							<div class="main_title_d">최저입찰가</div>
+							<div class="sub_title">4,300,000,000원</div>
+						</div>
+						<div class="item_tag">#토지/대지</div>
+						<div class="item_tag">#주거용건물/단독주택</div>
 					</div>
-					<div class="item_tag">#토지/대지</div>
-					<div class="item_tag">#주거용건물/단독주택</div>
-				</div>
-			</div>
+					
 
-			<div class="item_card">
-				<div class="thumbnail16_9">
-					<img src="images/ex_back.jpg" alt="예시 이미지" />
-					<span class="badge left waitng">입찰대기중</span>
-					<span class="badge right trans_black">조회수 4,230회</span>
-					<div class="line_badge">
-						<p>입찰 마감까지</p>
-						<p>23:58:55 남음</p>
-					</div>
-				</div>
-				<div class="item_info">
-					<div class="main_title">가로수길 대로변 인접 상가</div>
-					<div class="sub_title"><span class="icon_12_map mgr_4"></span>서울시 강남구</div>
-					<div class="item_price">
-						<div class="main_title">최저입찰가</div>
-						<div class="sub_title">4,300,000,000원</div>
-					</div>
-					<div class="item_tag">#토지/대지</div>
-					<div class="item_tag">#주거용건물/단독주택</div>
-				</div>
-				
-
-		</article>
+			</article>
+		</section>
 	</section>
 
 	<footer class="footer_pc">
@@ -206,24 +209,11 @@
 		</div>
 	</footer>
 
-	
-
-
 	<script>
 		new MultiClamp(document.getElementsByClassName('ellipsis2'), {
 			ellipsis: '...',
 			clamp: 2
 		});
-
-		function toggleSideNav() {
-			const sideNav = document.getElementsByClassName('side_nav')[0]
-			if(sideNav.style.left == '0px') {
-				sideNav.style.left = '100%'
-			}else if(sideNav.style.left == '100%') {
-				sideNav.style.left = 0;
-			}
-		}
-
 	</script>
 </body>
 </html>

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script src="../js.js"></script>
 	<link rel="stylesheet" href="../test.css">
 </head>
 <body>
@@ -69,41 +70,45 @@
 			<div class="arrow_24"></div>
 			<p class="main_title">회원가입</p>
 		</div>
-		<form action="submit">
-			<div class="name_box">
+		<form id="registerForm">
+			<div class="field_wrap">
 				<label for="name">이름</label>
-				<input type="text" placeholder="이름">
+				<input id="userName" type="text" placeholder="이름" required />
+				<p class="description"></p>
 			</div>
-			<div class="id_box">
-				<label for="id">아이디(이메일)</label>
-				<input type="email" placeholder="이메일">
+			<div class="field_wrap">
+				<label for="email">아이디(이메일)</label>
+				<input id="userEmail" type="email" placeholder="이메일" required />
+				<p class="description"></p>
 			</div>
-			<div class="pw_box">
-				<label for="pw">비밀번호</label>
-				<input type="password" placeholder="비밀번호">
+			<div class="field_wrap">
+				<label for="password">비밀번호</label>
+				<input id="userPassword" type="password" placeholder="비밀번호" required />
+				<p class="description"></p>
 			</div>
 
-			<div class="check_pw_box">
-				<label for="pw">비밀번호 확인</label>
-				<input type="password" placeholder="비밀번호 확인">
+			<div class="field_wrap">
+				<label for="checkPw">비밀번호 확인</label>
+				<input id="checkPw" type="password" placeholder="비밀번호 확인" required />
+				<p class="description"></p>
 			</div>
 
 			<div class="terms_box">
 				<div class="terms">
-					<input type="checkbox" id="terms1" checked>
+					<input type="checkbox" id="terms1" required />
 					<label for="terms1">경매야 스쿨 서비스 이용약관</label>
 					<span>*필수</span>
 					<div>[내용보기]</div>
 				</div>
 
 				<div class="terms">
-					<input type="checkbox" id="terms2">
+					<input type="checkbox" id="terms2" required />
 					<label for="terms2">경매야 스쿨 서비스 이용약관</label>
 					<span>*필수</span>
 					<div>[내용보기]</div>
 				</div>
 			</div>
-			<button>가입하기</button>
+			<button type="button" onclick="registerSubmitHandler()">가입하기</button>
 		</form>
 	</section>
 
@@ -170,6 +175,5 @@
 			<p class="mgt_8">© 2020. NextIB All right reserved.</p>
 		</div>
 	</footer>
-
 </body>
 </html>

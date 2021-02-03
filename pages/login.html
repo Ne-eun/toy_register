@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script src="../js.js"></script>
 	<link rel="stylesheet" href="../test.css">
 </head>
 <body>
@@ -25,67 +26,71 @@
 		</div>
 	</header>
 
-	<!--[s] //반응형 메뉴 사이드바 -->
-	<section class="side_nav" style="left: 100%">
-		<div class="background">
-			<div class="icon_24_cancel" onclick="toggleSideNav()"></div>
-			<div class="auth_buttons">
-				<button class="outline">회원가입</button>
-				<button>로그인</button>
-			</div>
-			<p class="auth_description">로그인 후 더 다양한 서비스를 이용하세요.</p>
+	<section class="content-wrap">
+		<!--[s] //반응형 메뉴 사이드바 -->
+		<section class="side_nav">
+			<div class="background">
+				<div class="icon_24_cancel" onclick="toggleSideNav()"></div>
+				<div class="auth_buttons">
+					<button class="outline" onClick="locaton.href='./register.html'">회원가입</button>
+					<button>로그인</button>
+				</div>
+				<p class="auth_description">로그인 후 더 다양한 서비스를 이용하세요.</p>
 
-			<div class="menus">
-				<a href="">경매야 물건 목록</a>
-				<a href="">경매야 스쿨</a>
-				<a href="">마이페이지</a>
-			</div>
+				<div class="menus">
+					<a href="">경매야 물건 목록</a>
+					<a href="">경매야 스쿨</a>
+					<a href="">마이페이지</a>
+				</div>
 
-			<div class="event">
-				<div class="title">이벤트</div>
-				<!-- <p>진행중인 이벤트가 없습니다.</p> -->
-				<div class="event_item">
-					<div class="thumbnail16_9">
-						<img src="" alt="">
-					</div>
-					<div class="item_info">
-						<p class="title ellipsis2">이벤트명을 시작중입니다 원해시는 분은 해당 글을 클릭하세요오오옹 이벤트 이벤트으으으으</p>
-						<p class="sub_title">20.00.00 ~ 20.00.00</p>
+				<div class="event">
+					<div class="title">이벤트</div>
+					<!-- <p>진행중인 이벤트가 없습니다.</p> -->
+					<div class="event_item">
+						<div class="thumbnail16_9">
+							<img src="" alt="">
+						</div>
+						<div class="item_info">
+							<p class="title ellipsis2">이벤트명을 시작중입니다 원해시는 분은 해당 글을 클릭하세요오오옹 이벤트 이벤트으으으으</p>
+							<p class="sub_title">20.00.00 ~ 20.00.00</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="menus">
-				<a href="">공지사항</a>
-				<a href="">자주 묻는 질문</a>
-				<a href="">보도자료</a>
-			</div> 
-		</div>
-	</section>
-<!--[e] //반응형 메뉴 사이드바 -->
-
-	<section class="login">
-		<div class="title_box">
-			<div class="arrow_24"></div>
-			<p class="main_title">로그인</p>
-		</div>
-		<form action="submit">
-			<div class="id_box">
-				<label for="id">아이디</label>
-				<input type="email" placeholder="이메일">
+				<div class="menus">
+					<a href="">공지사항</a>
+					<a href="">자주 묻는 질문</a>
+					<a href="">보도자료</a>
+				</div> 
 			</div>
-			<div class="pw_box">
-				<label for="pw">비밀번호</label>
-				<input type="password" placeholder="비밀번호">
-			</div>
-			<button>로그인</button>
-		</form>
+		</section>
+	<!--[e] //반응형 메뉴 사이드바 -->
 
-		<div class="sub_menu">
-			<a href="">아이디 찾기</a>
-			<a href="">비밀번호 찾기</a>
-			<a href="">회원가입</a>
-		</div>
+		<section class="login">
+			<div class="title_box">
+				<div class="arrow_24"></div>
+				<p class="main_title">로그인</p>
+			</div>
+			<form id="loginForm">
+				<div class="field_wrap">
+					<label for="userId">아이디</label>
+					<input id="userId" type="email" placeholder="이메일" required />
+					<p class="description"></p>
+				</div>
+				<div class="field_wrap">
+					<label for="userPassword">비밀번호</label>
+					<input id="userPassword" type="password" placeholder="비밀번호" required />
+					<p class="description"></p>
+				</div>
+				<button type="button" onclick="loginHandler()">로그인</button>
+			</form>
+
+			<div class="sub_menu">
+				<a href="">아이디 찾기</a>
+				<a href="">비밀번호 찾기</a>
+				<a href="register.html">회원가입</a>
+			</div>
+		</section>
 	</section>
 
 	<footer class="footer_pc">
@@ -152,5 +157,6 @@
 		</div>
 	</footer>
 
+	
 </body>
 </html>
